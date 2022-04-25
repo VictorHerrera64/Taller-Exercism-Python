@@ -7,7 +7,7 @@ def add_prefix_un(word):
     This function takes `word` as a parameter and
     returns a new word with an 'un' prefix.
     """
-    return "Un" + word
+    return "un" + word
 
 # add_prefix_un()´s outputs
 word = add_prefix_un("supported")
@@ -67,6 +67,7 @@ def adjective_to_verb(sentence, index):
     sentence = sentence[:-1]
     word = sentence.split()[index]
     return word + "en"
-# remove_suffix_ness()´s outputs
+
+# adjective_to_verb()´s outputs
 print(adjective_to_verb("I need to make that bright.", -1))
 
