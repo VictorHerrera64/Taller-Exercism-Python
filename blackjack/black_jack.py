@@ -15,6 +15,10 @@ def value_of_card(card):
     if card == 'A':
         return 1
     return int(card)
+#value_of_card()'s outputs
+value = value_of_card("K")
+print(f'value of the card: {value}')
+
 def higher_card(card_one, card_two):
     """Determine which card has a higher value in the hand.
  
@@ -24,6 +28,9 @@ def higher_card(card_one, card_two):
     if value_of_card(card_one) == value_of_card(card_two):
         return card_one, card_two
     return card_one if value_of_card(card_one) > value_of_card(card_two) else card_two
+#higher_card()'s outputs
+card = higher_card("A","K")
+print(f'higher card: {card}')
 def value_of_ace(card_one, card_two):
     """Calculate the most advantageous value for the ace card.
  
@@ -38,6 +45,9 @@ def value_of_ace(card_one, card_two):
         return 11
     if value_of_card(card_one) + value_of_card(card_two) > 10:
         return 1
+#value_of_ace()'s outputs
+value = value_of_ace("7", "3")
+print(f'value of ace: {value}')
 def is_blackjack(card_one, card_two):
     """Determine if the hand is a 'natural' or 'blackjack'.
  
@@ -48,6 +58,10 @@ def is_blackjack(card_one, card_two):
     if (card_one in high_cards and card_two == 'A') or (card_two in high_cards and card_one == 'A'):
         return True
     return False
+#is_blackjack()'s outputs
+answer = is_blackjack("A", "2")
+print(f'is blackjack ? : {answer}')
+
 def can_split_pairs(card_one, card_two):
     """Determine if a player can split their hand into two hands.
  
@@ -55,6 +69,10 @@ def can_split_pairs(card_one, card_two):
     :return: bool - if the hand can be split into two pairs (i.e. cards are of the same value).
     """
     return value_of_card(card_one) == value_of_card(card_two)
+#can_split_pairs()'s outputs
+answer = can_split_pairs("Q", "K")
+print(f'can split pairs? : {answer}')
+
 def can_double_down(card_one, card_two):
     """Determine if a blackjack player can place a double down bet.
  
@@ -63,3 +81,7 @@ def can_double_down(card_one, card_two):
     """
     dd_vals = [9,10,11]
     return value_of_card(card_one) + value_of_card(card_two) in dd_vals
+
+#can_double_down()'s outputs
+answer = can_double_down("A", "9")
+print(f'can double down? : {answer}')
