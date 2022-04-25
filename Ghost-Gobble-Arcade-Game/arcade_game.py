@@ -6,6 +6,10 @@ def eat_ghost(power_pellet_active, touching_ghost):
     :return: bool
     """
     return power_pellet_active and touching_ghost
+# eat_ghost()'s outputs
+answer = eat_ghost(True,False)
+print(f'Pac-Man eats a ghost? R// : {answer} ')
+
 def score(touching_power_pellet, touching_dot):
     """
  
@@ -14,6 +18,10 @@ def score(touching_power_pellet, touching_dot):
     :return: bool
     """
     return touching_power_pellet or touching_dot
+# score()'s outputs
+answer = score(True,False)
+print(f'Pac-Man scores? R// : {answer} ')
+
 def lose(power_pellet_active, touching_ghost):
     """
  
@@ -22,6 +30,10 @@ def lose(power_pellet_active, touching_ghost):
     :return: bool
     """
     return touching_ghost and not power_pellet_active
+# lose()'s outputs
+answer = lose(True,False)
+print(f'Pac-Man loses? R// : {answer} ')
+
 def win(has_eaten_all_dots, power_pellet_active, touching_ghost):
     """
  
@@ -31,3 +43,6 @@ def win(has_eaten_all_dots, power_pellet_active, touching_ghost):
     :return: bool
     """
     return has_eaten_all_dots and not lose(power_pellet_active, touching_ghost)
+# win()'s outputs
+answer = win(True,False,True)
+print(f'Pac-Man wins? R// : {answer} ')
