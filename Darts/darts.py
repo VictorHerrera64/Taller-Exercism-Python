@@ -8,3 +8,5 @@ def score(x, y):
     if target <= 10:
         return 1
     return 0
+target = score(0,0)
+print(f'Score : {target}')
